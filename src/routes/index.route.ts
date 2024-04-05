@@ -1,9 +1,9 @@
 const router = require('express').Router()
 
 
-const userRouter = require('./user.route')
+import userRouter from './user.route'
 
-const hotelRouter = require('./hotel.route')
+import hotelRouter from './hotel.route'
 
 
 
@@ -12,4 +12,4 @@ const testmiddleware = require('../middlewares/test.middlewares')
 router.use('/hotel', testmiddleware,hotelRouter)
 router.use('/users', testmiddleware,userRouter)
 
-module.exports = router
+export default router

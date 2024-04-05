@@ -4,13 +4,7 @@ import authorise from '../middlewares/auth.authorise';
 import validateRequest from '../middlewares/validation';
 import Joi, { Schema } from 'joi';
 
-import {
-    createHotelRoom,
-    updateHotelRoom,
-    deleteHotelRoom,
-    fetchOneHotelRoom,
-    fetchMany
-} from '../controllers/hotelControllers';
+import hotelControlers from '../controllers/hotelControllers'
 
 const router = Router();
 
@@ -19,10 +13,10 @@ const roomSchema: Schema = Joi.object({
     description: Joi.string().required()
 });
 
-router.post('/', validateRequest(roomSchema), authenticate, authorise, createHotelRoom);
-router.patch('/:id', authenticate, authorise, updateHotelRoom);
-router.delete('/:id', authenticate, authorise, deleteHotelRoom);
-router.get('/:id', authenticate, fetchOneHotelRoom);
-router.get('/', authenticate, fetchMany);
+router.post('/', validateRequest(roomSchema), authenticate, authorise, hotelControlers.createHotelRoom);
+router.patch('/:id', authenticate, authorise, hotelControlers.updateHotelRoom);
+router.delete('/:id', authenticate, authorise, hotelControlers.deleteHotelRoom);
+router.get('/:id', authenticate, hotelControlers.fetchOneHotelRoom);
+router.get('/', authenticate, hotelControlers.fetchMany);
 
 export default router;

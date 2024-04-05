@@ -130,4 +130,4 @@ class HotelController {
     }
 }
 
-export default new HotelController();
+export default new  HotelController() ;
