@@ -5,3 +5,7 @@ interface hotel{
     room_type: Object,
     price:number,
 }
+
+export {
+    hotel
+}

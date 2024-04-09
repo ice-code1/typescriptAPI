@@ -1,11 +1,15 @@
-const router = require('express').Router()
+//const router = require('express').Router()
+import { Router } from 'express';
 
-import userControllers from '../controllers/userControllers'
+import UserControlers from '../controllers/userControllers'
 
-router.post('/register', userControllers.userRegistration)
-router.post('/login',userControllers.userLogin)
-router.get('/:id',userControllers.fetchUser)
-router.put('/:id',userControllers.updateUser)
-router.delete('/:id',userControllers.deleteUser)
+const router = Router();
+
+
+router.post('/register', UserControlers.userRegistration)
+router.post('/login',UserControlers.userLogin)
+router.get('/:id',UserControlers.fetchUser)
+router.put('/:id',UserControlers.updateUser)
+router.delete('/:id',UserControlers.deleteUser)
 
 export default router

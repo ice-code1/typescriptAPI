@@ -6,3 +6,7 @@ interface user{
     password:string,
     role:string
 }
+
+export {
+    user
+}

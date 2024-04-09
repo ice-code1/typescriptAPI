@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import HotelRoomService from '../services/hotelServices';
+import hotelModel from '../models/userModel';
 
 class HotelController {
     // Create a room
@@ -130,4 +131,4 @@ class HotelController {
     }
 }
 
-export default new  HotelController() ;
+export default new  HotelController
